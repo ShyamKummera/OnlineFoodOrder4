@@ -6,4 +6,28 @@
           <h1>Cuisine page</h1>
     </div>
 
+    <form action="{% url 'savecuisine' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table align="center" border="2">
+        <tr>
+            <th>
+                <input type="text" placeholder="Cuisine" name="c1" required>
+                <input type="file" name="c2" required>
+                <button type="submit">Save</button>
+            </th>
+        </tr>
+    </table>
+    </form>
+
+    <table align="center" border="2">
+        <tr><th>ID</th><th>Type</th><th>Photo</th></tr>
+        {% for c_datum in c_data %}
+            <tr>
+                <th>{{ c_datum.id }}</th>
+                <th>{{ c_datum.type }}</th>
+                <th><img src="{{ c_datum.photo.url }}" width="50" height="50"></th>
+            </tr>
+        {% endfor %}
+
+    </table>
 {% endblock %}

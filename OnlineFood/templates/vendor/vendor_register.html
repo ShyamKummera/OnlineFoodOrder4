@@ -1,0 +1,40 @@
+{% extends 'common.html' %}
+
+{% block common %}
+    {% load static %}
+    <style>
+        th{
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+    <form action="{% url 'vendor_save' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <table align="center" border="2">
+        <tr><th style="background-color: white;color: orangered;font-family: 'Agency FB';font-size: 30px;padding: 10px">Vendor Registration Page</th></tr>
+
+        <tr><th><input type="text" placeholder="Stall Name" required name="v1"></th></tr>
+        <tr><th><input type="number" placeholder="Mobile No1" required name="v2"></th></tr>
+        <tr><th><input type="number" placeholder="Contact No2" required name="v3"></th></tr>
+        <tr><th>Cuisine <select name="v4" required>
+            {% for c in cuisine %}
+                    <option value="{{ c.id }}">{{ c.type }}</option>
+            {% endfor %}
+        </select></th></tr>
+        <tr><th><input type="file" required name="v5"></th></tr>
+        <tr><th><textarea required name="v6">Address</textarea> </th></tr>
+        <tr><th><select name="v7" required>
+            <option>Select city</option>
+            {% for c in city %}
+                    <option value="{{ c.id }}">{{ c.name }}</option>
+            {% endfor %}
+        </select></th></tr>
+     <tr><th><input type="password" placeholder="Password" required name="v8"></th></tr>
+     <tr><th><button type="submit">Register</button> </th></tr>
+    </table>
+    </form>
+
+     <p class="mb-1">
+        <a href="{% url 'vendor_main' %}">Login</a>
+      </p>
+{% endblock %}

@@ -3,7 +3,46 @@
 {% block admin_welcome %}
 
     <div class="col-sm-6">
-          <h1>City page</h1>
+          <h1>City Operations</h1>
     </div>
 
+    <form action="{% url 'savecity' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table align="center" border="2">
+        <tr>
+            <td><input type="text" placeholder="City Name" required name="c1"></td>
+            <td><input type="file" placeholder="Photo" required name="c2">
+            <td>
+                <select name="c3" required>
+                {% for x in s_data %}
+                    <option value="{{ x.id }}">{{ x.name }}</option>
+                {% endfor %}
+                </select>
+            </td>
+            <td>
+                <button type="submit">Save</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+
+    {% if c_data %}
+    <table align="center" border="2">
+        <tr><th>All City's Information</th></tr>
+        <tr>
+            <th>City ID</th>
+            <th>City NAME</th>
+            <th>City Photo</th>
+            <th>State Name</th>
+        </tr>
+        {% for x in c_data %}
+             <tr>
+            <th>{{ x.id }}</th>
+            <th>{{ x.name }}</th>
+            <th><img src="{{ x.photo.url }}" width="50" height="50"></th>
+            <th>{{ x.city_state.name }}</th>
+        </tr>
+    {% endfor %}
+    </table>
+    {% endif %}
 {% endblock %}
