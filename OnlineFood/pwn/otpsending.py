@@ -10,7 +10,7 @@ def sendASMS(contactno = "8919961080",message="Sorry Message not Available"):
 
 
     headers = {
-        'authorization': "uls2KAIQcNg9jWPnteLiSx4vVzb87orRX01kTaOfmYG53CwyUBgBbMdUQHryZi1I96wR7O8NDP0CszvV",
+        'authorization': "hfCpNRqKqFH6H5Eue8r8Dma2Bg9GzDLmwRzbcgI2FXwZEdeuCJ8igkpzETBJ",
         'Content-Type': "application/x-www-form-urlencoded",
         'Cache-Control': "no-cache",
     }

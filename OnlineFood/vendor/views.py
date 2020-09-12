@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from vendor.models import VendorRegistrationModel
+from vendor.models import VendorRegistrationModel,FoodTypeModel,FoodItemsModel
 from pwn.models import CuisineModel,CityModel
 from django.contrib import messages
 
@@ -10,10 +10,10 @@ def openLogin(request):
 def vendor_login_check(request):
     if request.method == "POST":
         try:
-            admin = VendorRegistrationModel.objects.get(contact_1=request.POST.get("vendor_username"),
+            vendor_res = VendorRegistrationModel.objects.get(contact_1=request.POST.get("vendor_username"),
                                                 password=request.POST.get("vendor_password"),status='approved')
             request.session["vendor_status"] = True
-            return redirect('vendor_welcome')
+            return redirect('vendor_welcome',pk=vendor_res.id)
         except:
             return render(request, "vendor/login.html", {"error": "Invalid User"})
     else:
@@ -41,5 +41,27 @@ def vendor_save(request):
     return redirect('vendor_main')
 
 
-def vendor_welcome(request):
-    return render(request,"vendor/welcome.html")
+def vendor_welcome(request,pk):
+    request.session["vendor_id"] = pk
+    vendor_details = VendorRegistrationModel.objects.get(id=pk)
+    return render(request,"vendor/home.html",{"vendor_details":vendor_details})
+
+
+def vendor_foodtype(request):
+    vendor_details = VendorRegistrationModel.objects.get(id=request.session["vendor_id"])
+    return render(request,"vendor/foodtype.html",{"vendor_details":vendor_details,"food_type":FoodTypeModel.objects.filter(vendor_id_id=request.session["vendor_id"])})
+
+
+def vendor_save_foodtype(request):
+    FoodTypeModel(name=request.POST.get("f1"),vendor_id_id=request.session["vendor_id"],status=request.POST.get("f2")).save()
+    return vendor_foodtype(request)
+
+
+def vendor_food(request):
+    vendor_details = VendorRegistrationModel.objects.get(id=request.session["vendor_id"])
+    return render(request, "vendor/food.html", {"vendor_details": vendor_details,"food_type":FoodTypeModel.objects.filter(vendor_id_id=request.session["vendor_id"]),"food":FoodItemsModel.objects.filter(food_type)})
+
+
+def vendor_save_food(request):
+    FoodItemsModel(name=request.POST.get("f1"),food_type_id=request.POST.get("f2"),price=request.POST.get("f3"),photo=request.FILES["f4"]).save()
+    return vendor_food(request)
