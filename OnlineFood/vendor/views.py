@@ -59,7 +59,7 @@ def vendor_save_foodtype(request):
 
 def vendor_food(request):
     vendor_details = VendorRegistrationModel.objects.get(id=request.session["vendor_id"])
-    return render(request, "vendor/food.html", {"vendor_details": vendor_details,"food_type":FoodTypeModel.objects.filter(vendor_id_id=request.session["vendor_id"]),"food":FoodItemsModel.objects.filter(food_type)})
+    return render(request, "vendor/food.html", {"vendor_details": vendor_details,"food_type":FoodTypeModel.objects.filter(vendor_id_id=request.session["vendor_id"]),"food":FoodItemsModel.objects.filter(food_type__vendor_id=request.session["vendor_id"])})
 
 
 def vendor_save_food(request):
