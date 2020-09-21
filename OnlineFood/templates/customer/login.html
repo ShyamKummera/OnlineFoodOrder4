@@ -1,3 +1,84 @@
+{% extends 'common.html' %}
+{% block common %}
+    {% load static %}
+
+     <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .items
+      {
+          text-align: left;
+          font-family: "Agency FB";
+          font-size: 20px;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 
 
-Login Page
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    {% include 'customer/cutomer_menu.html' %}
+  </section>
+
+        <form action="{% url 'customer_login_check' %}" method="post">
+            {% csrf_token %}
+
+        <table align="center" border="0">
+            <tr>
+                <th style="width: 350px;font-size: 30px;font-family: 'Agency FB';text-align: center">Customer Login Page</th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Contact No</span>
+  </div>
+  <input type="number" required name="c1" class="form-control"  aria-describedby="basic-addon1">
+</div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Password</span>
+  </div>
+  <input type="password" required name="c2" class="form-control"  aria-describedby="basic-addon1">
+</div>
+                </th>
+            </tr>
+
+            <tr>
+                <th style="text-align: center">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </th>
+            </tr>
+            {% if error %}
+            <tr>
+                <th style="text-align: center">
+                    <h3 style="background-color: red;color: white">{{ error }}</h3>
+                </th>
+            </tr>
+            {% endif %}
+        </table>
+
+        </form>
+
+
+</main>
+
+{% endblock %}
