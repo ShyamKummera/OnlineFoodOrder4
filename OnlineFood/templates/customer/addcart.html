@@ -1,0 +1,54 @@
+{% extends 'customer/welcome.html' %}
+
+{% block customer_welcome %}
+    <style>
+        .food_item
+        {
+            font-size: 20px;
+            font-family: "Agency FB";
+            font-style: normal;
+            text-align: center;
+        }
+    </style>
+    <table align="center" border="2">
+        <tr><th><img src="{{ food.photo.url }}" width="200" height="200"></th></tr>
+        <tr><th class="food_item"> Name : {{ food.name }}</th></tr>
+        <tr><th class="food_item"> Price : {{ food.price }}</th></tr>
+        <tr><th class="food_item"> Type :  {{ food.food_type.name }}</th></tr>
+        <tr>
+            <th class="food_item">
+                Quantity :
+                <form action="{% url 'customer_quantity'%}" method="post">
+                    {% csrf_token %}
+                <input type="hidden" value="{{ food.price }}" name="price">
+                    <input type="hidden" name="item" value="{{ food.id }}">
+                <button type="submit" class="btn btn-primary" value="+" name="b1"> + </button>
+                    <span> {{ count }} </span>
+                <button type="submit" class="btn btn-danger" value="-" name="b1"> - </button>
+
+                </form>
+
+            </th>
+        </tr>
+        <tr>
+            <th class="food_item">
+                Total : {{ total }}
+            </th>
+        </tr>
+
+        {% if count != 0 or total != 0.0 %}
+        <tr>
+            <th class="food_item">
+
+                <form action="{% url 'customer_save_to_cart' %}" method="post">
+                    {% csrf_token %}
+                 <input type="hidden" name="i_id" value="{{ food.id }}">
+                 <input type="hidden" name="count" value="{{ count }}">
+                <button type="submit" class="btn btn-primary"> Add to Cart </button>
+                </form>
+            </th>
+        </tr>
+        {% endif %}
+    </table>
+
+{% endblock %}

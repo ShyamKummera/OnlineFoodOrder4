@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1500d08f-8b27-48ee-90d7-70d57b7699f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pwn/static/images/customer_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/welcome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer/templatetags/mycustom.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/customer/addcart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/customer/cart_items.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/963a1e20-1b0a-456f-aa73-1d25cb337ad7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/963a1e20-1b0a-456f-aa73-1d25cb337ad7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineFood/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineFood/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/customer/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/customer/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/customer/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/customer/cutomer_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/cutomer_menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/customer/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customer/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/welcome.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,20 +62,21 @@
     <session id="-707619951">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
-          <entry key="project.open.time.0" value="6" />
+          <entry key="project.closed" value="16" />
+          <entry key="project.open.time.0" value="7" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="44" />
           <entry key="css" value="16" />
-          <entry key="html" value="6269" />
-          <entry key="py" value="5654" />
+          <entry key="html" value="7575" />
+          <entry key="py" value="6764" />
           <entry key="py@OnlineFood" value="20" />
         </counts>
       </usages-collector>
@@ -81,20 +84,22 @@
         <counts>
           <entry key="CSS" value="16" />
           <entry key="CommandLine" value="20" />
-          <entry key="HTML" value="6269" />
-          <entry key="Python" value="5654" />
+          <entry key="HTML" value="7575" />
+          <entry key="Python" value="6764" />
           <entry key="Scratch" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="5" />
-          <entry key="customer_customerregistrationmodel" value="10" />
-          <entry key="html" value="53" />
+          <entry key="customer_cartitemmodel" value="4" />
+          <entry key="customer_customerregistrationmodel" value="13" />
+          <entry key="customer_ordermodel_items" value="1" />
+          <entry key="html" value="56" />
           <entry key="js" value="1" />
           <entry key="png" value="2" />
           <entry key="pwn_adminloginmodel" value="1" />
-          <entry key="py" value="73" />
+          <entry key="py" value="84" />
           <entry key="rnc" value="1" />
           <entry key="vendor_fooditemsmodel" value="3" />
           <entry key="vendor_foodtypemodel" value="2" />
@@ -104,11 +109,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="Database Element" value="19" />
-          <entry key="HTML" value="53" />
+          <entry key="Database Element" value="27" />
+          <entry key="HTML" value="56" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="1" />
-          <entry key="Python" value="73" />
+          <entry key="Python" value="84" />
           <entry key="RNG Compact" value="1" />
           <entry key="UML" value="3" />
         </counts>
@@ -118,22 +123,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/customer/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="102" selection-end-column="7" />
-              <folding>
-                <element signature="e#631#2872#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/customer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+            <state relative-caret-position="450">
+              <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
               <folding>
                 <element signature="e#2#34#0" expanded="true" />
               </folding>
@@ -141,30 +134,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/customer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="265">
+              <caret line="131" column="63" lean-forward="true" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="63" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1600664269379" expanded="true" signature="974:979" ph="..." />
+                <marker date="1600833148964" expanded="true" signature="816:821" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/customer/menu.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/vendor_fooditemsmodel">
+        <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_cartitemmodel">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -173,43 +157,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/customer/home.html">
+        <entry file="file://$PROJECT_DIR$/templates/customer/cart_items.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="12" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/customer/welcome.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="70" column="18" lean-forward="true" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+            <state relative-caret-position="841">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#1601#1709#0#HTML" expanded="true" />
+                <element signature="e#1816#1936#0#HTML" expanded="true" />
+                <element signature="e#1883#1903#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/customer/login.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/customer/templatetags/mycustom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="72" column="65" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
+            <state relative-caret-position="-162">
+              <caret column="27" selection-start-column="27" selection-end-column="27" />
               <folding>
-                <element signature="e#1930#1956#0#HTML" expanded="true" />
-                <element signature="e#1982#2024#0#HTML" expanded="true" />
+                <marker date="1600838356261" expanded="true" signature="157:184" ph="..." />
               </folding>
             </state>
           </provider>
@@ -220,8 +187,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -231,8 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/customer/models.py" />
-        <option value="$PROJECT_DIR$/vendor/models.py" />
         <option value="$PROJECT_DIR$/pwn/models.py" />
         <option value="$PROJECT_DIR$/templates/pwn/login.html" />
         <option value="$PROJECT_DIR$/templates/pwn/collapsed-sidebar.html" />
@@ -257,7 +222,6 @@
         <option value="$PROJECT_DIR$/templates/vendor/food.html" />
         <option value="$PROJECT_DIR$/vendor/views.py" />
         <option value="$PROJECT_DIR$/OnlineFood/urls.py" />
-        <option value="$PROJECT_DIR$/OnlineFood/settings.py" />
         <option value="$PROJECT_DIR$/templates/d.html" />
         <option value="$PROJECT_DIR$/customer/middleware.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
@@ -270,10 +234,18 @@
         <option value="$PROJECT_DIR$/templates/customer/cutomer_menu.html" />
         <option value="$PROJECT_DIR$/templates/customer/login.html" />
         <option value="$PROJECT_DIR$/templates/customer/home.html" />
+        <option value="$PROJECT_DIR$/templates/customer/menu.html" />
+        <option value="$PROJECT_DIR$/vendor/models.py" />
+        <option value="$PROJECT_DIR$/customer/models.py" />
+        <option value="$PROJECT_DIR$/templates/customer/addcart.html" />
         <option value="$PROJECT_DIR$/templates/customer/welcome.html" />
         <option value="$PROJECT_DIR$/customer/urls.py" />
-        <option value="$PROJECT_DIR$/templates/customer/menu.html" />
         <option value="$PROJECT_DIR$/customer/views.py" />
+        <option value="$PROJECT_DIR$/customer/mycustom.py" />
+        <option value="$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/template/defaulttags.py" />
+        <option value="$PROJECT_DIR$/OnlineFood/settings.py" />
+        <option value="$PROJECT_DIR$/templates/customer/cart_items.html" />
+        <option value="$PROJECT_DIR$/customer/templatetags/mycustom.py" />
       </list>
     </option>
   </component>
@@ -283,7 +255,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="120" />
     <option name="y" value="25" />
     <option name="width" value="1040" />
@@ -297,7 +269,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -308,18 +279,19 @@
             <path>
               <item name="OnlineFood" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlineFood" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="customer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnlineFood" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnlineFood" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="customer" type="462c0819:PsiDirectoryNode" />
+              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -332,13 +304,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Naveen Class Room\Project 9am\Final Project\OnlineFoodOrder\OnlineFood\customer\templatetags" />
+      <recent name="F:\Naveen Class Room\Project 9am\Final Project\OnlineFoodOrder\OnlineFood\templates\customer" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Naveen Class Room\Project 9am\Final Project\OnlineFoodOrder\OnlineFood\pwn\static\images" />
       <recent name="F:\Naveen Class Room\Project 9am\Final Project\OnlineFoodOrder\OnlineFood\templates\pwn" />
       <recent name="F:\Naveen Class Room\Project 9am\Final Project\OnlineFoodOrder\OnlineFood\pwn\static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Naveen Class Room\Project 9am\Final Project\OnlineFoodOrder\OnlineFood\templates\customer" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -456,7 +429,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32978722" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.51914895" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5765957" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -476,12 +449,12 @@
       <window_info anchor="right" id="Database" order="4" weight="0.3295129" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25883478" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25883478" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32978722" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.51914895" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5765957" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -508,20 +481,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/common.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -546,56 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel" />
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/customer/customer_header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -603,41 +516,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/customer/cutomer_menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -648,49 +530,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/customer/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="791">
           <caret line="79" column="74" lean-forward="true" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="72" column="65" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
-          <folding>
-            <element signature="e#1930#1956#0#HTML" expanded="true" />
-            <element signature="e#1982#2024#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,73 +571,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="70" column="18" lean-forward="true" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
+    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/vendor_fooditemsmodel">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -803,46 +580,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/customer/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="102" selection-end-column="7" />
-          <folding>
-            <element signature="e#631#2872#0#HTML" />
-          </folding>
+        <state relative-caret-position="131">
+          <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/customer/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+        <state relative-caret-position="149">
+          <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="19" />
           <folding>
-            <element signature="e#2#34#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/templates/customer/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
+    <entry file="file://$PROJECT_DIR$/templates/customer/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_ordermodel_items">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -856,34 +640,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/vendor_fooditemsmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/template/library.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="105" column="26" lean-forward="true" selection-start-line="98" selection-end-line="105" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/vendor_fooditemsmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/menu.html">
+    <entry file="file://$PROJECT_DIR$/templates/customer/addcart.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/template/defaulttags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="1475" lean-forward="true" selection-start-line="1475" selection-end-line="1475" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_customerregistrationmodel">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/template/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="e#2#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnlineFood/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="75" column="10" lean-forward="true" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/customer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        <state relative-caret-position="265">
+          <caret line="131" column="63" lean-forward="true" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="63" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1600664269379" expanded="true" signature="974:979" ph="..." />
+            <marker date="1600833148964" expanded="true" signature="816:821" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://963a1e20-1b0a-456f-aa73-1d25cb337ad7/schema/main/table/customer_cartitemmodel">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customer/cart_items.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="e#1601#1709#0#HTML" expanded="true" />
+            <element signature="e#1816#1936#0#HTML" expanded="true" />
+            <element signature="e#1883#1903#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer/templatetags/mycustom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+          <folding>
+            <marker date="1600838356261" expanded="true" signature="157:184" ph="..." />
           </folding>
         </state>
       </provider>

@@ -30,8 +30,8 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-{#        <a href="{% url 'vendor_welcome' %}" class="nav-link">Home</a>#}
+      <li class="nav-item d-none d-sm-inline-block active" style="font-family: 'Agency FB';font-size: 30px">
+        Cart Items :
       </li>
 
     </ul>
@@ -73,7 +73,7 @@
           </li>
 
              <li class="nav-item has-treeview">
-            <a href="{% url 'cuisine' %}" class="nav-link">
+            <a href="{% url 'customer_cart_items' %}" class="nav-link">
                <img src="{% static 'images/order.png' %}">
               <p style="font-size: 30px;font-family: 'Agency FB';padding-left: 5px;">
                Cart Items

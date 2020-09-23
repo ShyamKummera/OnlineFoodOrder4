@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'customer.apps.CustomerConfig',
     'pwn.apps.PwnConfig',
     'vendor.apps.VendorConfig',
+    # 'customer.templatetags',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+
+        'libraries':{
+            'mycustom': 'customer.templatetags.mycustom',
+                    }
         },
     },
 ]

@@ -16,5 +16,7 @@ urlpatterns = [
     path('customer_logout/',views.customer_login_check,name='customer_logout'),
     path('customer_menu/',views.customer_menu,name='customer_menu'),
     path('add_to_cart/',views.add_to_cart,name='add_to_cart'),
-
+    path('customer_quantity/',views.customer_quantity,name='customer_quantity'),
+    path('customer_save_to_cart/',views.customer_save_to_cart,name='customer_save_to_cart'),
+    path('customer_cart_items/',views.customer_cart_items,name='customer_cart_items'),
 ]

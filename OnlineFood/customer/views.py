@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from customer.middleware import returnAddress
 from vendor.models import FoodItemsModel
 from pwn.models import CityModel
-from customer.models import CustomerRegistrationModel
+from customer.models import CustomerRegistrationModel,CartItemModel
 import random
 from pwn.otpsending import sendASMS
 
@@ -17,14 +17,6 @@ def showIndex(request):
     else:
         page = p.page(1)
     return render(request, "customer/index.html", {"address":res[0], "city":res[1], "food":page})
-
-
-def add_to_cart(request):
-    if request.session['customer_status']:
-        i_id = request.POST.get("item")
-
-    else:
-        return redirect('customer_login')
 
 
 def customer_register(request):
@@ -87,9 +79,7 @@ def customer_welcome(request,pk):
 
 
 def customer_menu(request):
-
     customer_details = CustomerRegistrationModel.objects.get(id=request.session["customer_id"])
-
     res = returnAddress()
     page_no = request.GET.get("pageno", 1)
     data = FoodItemsModel.objects.all()
@@ -98,5 +88,46 @@ def customer_menu(request):
         page = p.page(page_no)
     else:
         page = p.page(1)
-
     return render(request,"customer/menu.html",{"customer_details": customer_details,"address":res[0], "city":res[1], "food":page})
+
+
+def add_to_cart(request):
+    if request.session['customer_status']:
+        i_id = request.POST.get("item")
+        food = FoodItemsModel.objects.get(id=i_id)
+        total = food.price
+        return render(request,"customer/addcart.html",{"food":food,"count":1,"total":total})
+    else:
+        return redirect('customer_login')
+
+count = 0
+total = 0
+def customer_quantity(request):
+    _b = request.POST.get("b1")
+    price = float(request.POST.get("price"))
+    global count,total
+    if _b == '+':
+        count+=1
+        total = price * count
+    else:
+        if count > 0:
+            count-=1
+            total = price * count
+
+    i_id = request.POST.get("item")
+    food = FoodItemsModel.objects.get(id=i_id)
+    return render(request, "customer/addcart.html", {"food": food,"count":count,"total":total})
+
+
+def customer_save_to_cart(request):
+    i_id = request.POST.get("i_id")
+    count = request.POST.get("count")
+    c_id = request.session["customer_id"]
+    CartItemModel(customer_id=c_id,food_id=i_id,quantity=count).save()
+    return redirect('customer_menu')
+
+
+def customer_cart_items(request):
+    c_id = request.session["customer_id"]
+    cart_items = CartItemModel.objects.filter(customer_id=c_id)
+    return render(request,"customer/cart_items.html",{"cart_items":cart_items})

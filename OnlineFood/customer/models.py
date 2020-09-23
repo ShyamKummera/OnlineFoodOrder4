@@ -21,3 +21,10 @@ class OrderModel(models.Model):
     status = models.CharField(max_length=30)
     date = models.DateField(auto_now_add=True)
     address = models.TextField()
+
+
+class CartItemModel(models.Model):
+    id = models.AutoField(primary_key=True)
+    customer = models.ForeignKey(CustomerRegistrationModel,on_delete=models.CASCADE)
+    food = models.ForeignKey(FoodItemsModel,on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=False)
