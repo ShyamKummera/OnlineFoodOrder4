@@ -1,0 +1,22 @@
+
+{% extends 'vendor/welcome.html' %}
+
+{% block vendor_welcome %}
+
+    <table align="center" border="2">
+        <tr>
+            <th>Customer - ID</th>
+            <th>Food Name</th>
+            <th>Quantity</th>
+        </tr>
+
+        {% for x in data %}
+            <tr>
+            <th>{{ x.customer.id }}</th>
+            <th>{{ x.food.name }}</th>
+            <th>{{ x.quantity }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

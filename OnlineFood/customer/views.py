@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from customer.middleware import returnAddress
 from vendor.models import FoodItemsModel
 from pwn.models import CityModel
-from customer.models import CustomerRegistrationModel,CartItemModel
+from customer.models import CustomerRegistrationModel,CartItemModel,OrderModel
 import random
 from pwn.otpsending import sendASMS
 
@@ -123,11 +123,26 @@ def customer_save_to_cart(request):
     i_id = request.POST.get("i_id")
     count = request.POST.get("count")
     c_id = request.session["customer_id"]
-    CartItemModel(customer_id=c_id,food_id=i_id,quantity=count).save()
+    CartItemModel(customer_id=c_id,food_id=i_id,quantity=count,status='active').save()
     return redirect('customer_menu')
 
 
 def customer_cart_items(request):
     c_id = request.session["customer_id"]
-    cart_items = CartItemModel.objects.filter(customer_id=c_id)
+    cart_items = CartItemModel.objects.filter(customer_id=c_id,status='active')
     return render(request,"customer/cart_items.html",{"cart_items":cart_items})
+
+
+def customer_order(request):
+    address = request.POST.get("address")
+    total = request.POST.get("total")
+    c_id = request.session["customer_id"]
+    OrderModel(c_id_id=c_id,address=address,total=total).save()
+    CartItemModel.objects.filter(customer_id=c_id).update(status='order')
+    return redirect('customer_order_placed')
+
+
+def customer_order_placed(request):
+    c_id = request.session["customer_id"]
+    cart_items = CartItemModel.objects.filter(customer_id=c_id, status='order')
+    return render(request,"customer/orders.html",{"cart_items":cart_items})

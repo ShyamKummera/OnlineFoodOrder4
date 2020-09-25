@@ -8,7 +8,7 @@
             text-align: center;
             font-family: "Agency FB";
             font-size: 30px;
-            background-color: blue;
+            background-color: #ff00ae;
             color: white;
             padding: 10px;
             width: 150px;
@@ -34,8 +34,9 @@
                         <th class="ci">Price</th>
                         <th class="ci">Quantity</th>
                         <th class="ci">Total</th>
-                        <th class="ci">Modify</th>
-                        <th class="ci">Delete</th>
+                        <th class="ci">
+                            Status
+                        </th>
                     </tr>
                     {% for x in cart_items %}
                         <tr>
@@ -44,52 +45,41 @@
                             <th class="cai">{{ x.food.price }}</th>
                             <th class="cai">{{ x.quantity }}</th>
                             <th class="cai">{% totalAmount x.quantity x.food.price%}</th>
-                            <th class="cai">Yes</th>
-                            <th class="cai">Yes</th>
+
+                            <th class="cai">
+                                {% if x.status == 'order' %}
+                                    Yet to Conform
+                                {% endif %}
+                            </th>
+
+
                             </tr>
                     {% endfor %}
                 </table>
 
             </th>
             <th>
-                <form action="{% url 'customer_order' %}" method="post">
-                                {% csrf_token %}
+
                 <table align="center" border="2">
-                    <tr>
-                        <th colspan="2" style="font-family: 'Agency FB';width:250px;font-size: 40px;background-color: orangered;color: white;text-align: center">Address</th>
-                    </tr>
-                    <tr>
-                        <th colspan="2" style="text-align: center">
 
-                            <textarea required placeholder="Address" name="address" rows="5" cols="30"></textarea>
-
-                        </th>
-                    </tr>
-                    <tr><th colspan="2" style="font-family: 'Agency FB';width:250px;font-size: 40px;background-color: orangered;color: white;text-align: center">
-                        Payment</th></tr>
                     <tr>
                       <th style="font-family: 'Agency FB';width:250px;font-size: 20px;background-color: #fcf6ff;color: #ff4300;text-align: center">
                           Total Amount </th>
-
+                    </tr>
+                    <tr style="text-align: center">
                         <th>{% grandTotal request %}</th>
 
                     </tr>
-                    <tr>
-                        <th colspan="2" style="text-align: center">
-                            <input type="hidden" value="{% grandTotal request %}" name="total">
-                            <button type="submit" class="btn-dark" style="width: 100px">Pay</button>
 
-                        </th>
-                    </tr>
                 </table>
-                </form>
+
             </th>
         </tr>
 
     {% else %}
         <tr>
             <th style="padding: 10px;background-color: orangered;color: white;font-family: 'Agency FB';font-size: 40px;text-align: center">
-                Cart is Empty
+                Please place some Orders
                 </th>
         </tr>
 

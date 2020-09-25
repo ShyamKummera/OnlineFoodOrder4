@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from vendor.models import VendorRegistrationModel,FoodTypeModel,FoodItemsModel
 from pwn.models import CuisineModel,CityModel
 from django.contrib import messages
+from customer.models import CartItemModel
 
 def openLogin(request):
     return render(request,"vendor/login.html")
@@ -13,6 +14,7 @@ def vendor_login_check(request):
             vendor_res = VendorRegistrationModel.objects.get(contact_1=request.POST.get("vendor_username"),
                                                 password=request.POST.get("vendor_password"),status='approved')
             request.session["vendor_status"] = True
+            request.session["vendor_id"] = vendor_res.id
             return redirect('vendor_welcome',pk=vendor_res.id)
         except:
             return render(request, "vendor/login.html", {"error": "Invalid User"})
@@ -65,3 +67,12 @@ def vendor_food(request):
 def vendor_save_food(request):
     FoodItemsModel(name=request.POST.get("f1"),food_type_id=request.POST.get("f2"),price=request.POST.get("f3"),photo=request.FILES["f4"]).save()
     return vendor_food(request)
+
+
+def vendor_customer_order(request):
+
+    v_id = request.session["vendor_id"]
+
+    res = CartItemModel.objects.filter(status='order',food__food_type__vendor_id=v_id)
+
+    return render(request,"vendor/customer_orders.html",{"data":res})

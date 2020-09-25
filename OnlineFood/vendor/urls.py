@@ -14,4 +14,5 @@ urlpatterns = [
     path('vendor_save_foodtype/',views.vendor_save_foodtype,name='vendor_save_foodtype'),
     path('vendor_food/',views.vendor_food,name='vendor_food'),
     path('vendor_save_food/',views.vendor_save_food,name='vendor_save_food'),
+    path('vendor_customer_order/',views.vendor_customer_order,name='vendor_customer_order'),
 ]

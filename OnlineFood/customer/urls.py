@@ -19,4 +19,7 @@ urlpatterns = [
     path('customer_quantity/',views.customer_quantity,name='customer_quantity'),
     path('customer_save_to_cart/',views.customer_save_to_cart,name='customer_save_to_cart'),
     path('customer_cart_items/',views.customer_cart_items,name='customer_cart_items'),
+    path('customer_order/',views.customer_order,name='customer_order'),
+    path('customer_order_placed/',views.customer_order_placed,name='customer_order_placed'),
+
 ]
