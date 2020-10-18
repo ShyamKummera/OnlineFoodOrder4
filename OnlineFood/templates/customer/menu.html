@@ -2,7 +2,7 @@
 {% extends 'customer/welcome.html' %}
 
 {% block customer_welcome %}
-
+{% load static %}
    <main role="main">
 
 
@@ -20,6 +20,7 @@
                 <p class="items">Name : {{ x.name }}</p>
                 <p class="items">Price : {{ x.price }}</p>
                 <p class="items">By : {{ x.food_type.vendor_id.stall_name }}</p>
+                <img src="{% static 'images/heart white.png'  %}">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
 
